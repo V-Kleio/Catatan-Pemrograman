@@ -1,0 +1,108 @@
+Bagian 1
+
+Query: menikah(Suami,aihoshino).
+no
+
+
+Query: nenek(Nenek, eve), menikah(Nenek, Kakek), ((anak(Kakek, KakekBuyut), anak(Kakek, NenekBuyut)) ; (anak(Nenek, NenekBuyut), anak(Nenek, KakekBuyut))), wanita(NenekBuyut), pria(KakekBuyut).
+Kakek = barok
+KakekBuyut = qika
+Nenek = roxy
+NenekBuyut = makio ? 
+
+yes
+
+
+Query: anak(francesco, OrangTua), keponakan(OrangTua, Paman), pria(Paman).
+no
+
+
+Query: menikah(Orang, Istri1), menikah(Orang, Istri2), wanita(Istri1), wanita(Istri2), Istri1 \== Istri2.
+Istri1 = hinatsuru
+Istri2 = makio
+Orang = qika ? a
+
+Istri1 = hinatsuru
+Istri2 = suma
+Orang = qika
+
+Istri1 = makio
+Istri2 = hinatsuru
+Orang = qika
+
+Istri1 = makio
+Istri2 = suma
+Orang = qika
+
+Istri1 = suma
+Istri2 = hinatsuru
+Orang = qika
+
+Istri1 = suma
+Istri2 = makio
+Orang = qika
+
+no
+
+
+Query: saudaratiri(shelby, SaudaraTiri), anaksulung(SaudaraTiri).
+SaudaraTiriTertua = barok ? 
+
+yes
+
+
+Query: anak(Anak, OrangTua), \+ saudara(Anak,X).
+Anak = suzy
+OrangTua = barok ? a
+
+Anak = suzy
+OrangTua = roxy
+
+Anak = aihoshino
+OrangTua = ruby
+
+Anak = aihoshino
+OrangTua = eriq
+
+Anak = eve
+OrangTua = suzy
+
+Anak = eve
+OrangTua = francesco
+
+yes
+
+
+Query: pria(Pria), mertua(Mertua, Pria), usia(Mertua, Usia), Usia>99.
+Mertua = panji
+Pria = eriq
+Usia = 124 ? 
+
+yes
+
+
+Query: yatimpiatu(YatimPiatu1), usia(YatimPiatu1, Usia1), \+ (yatimpiatu(YatimPiatu2), usia(YatimPiatu2, Usia2), Usia2 < Usia1). 
+Usia = 25
+YatimPiatu = francesco ? 
+
+yes
+
+
+Query: usia(Orang, UsiaOrang), UsiaOrang > 60, menikah(Orang, Pasangan), saudara(Pasangan, Saudara1), saudara(Pasangan, Saudara2), Saudara1 \== Saudara2.
+Orang = roxy
+Pasangan = barok
+Saudara1 = shelby
+Saudara2 = yennefer
+UsiaOrang = 70 ? a
+
+Orang = roxy
+Pasangan = barok
+Saudara1 = yennefer
+Saudara2 = shelby
+UsiaOrang = 70
+
+no
+
+
+Query: keturunan(Keturunan, qika), keponakan(Keponakan1, Keturunan), keponakan(Keponakan2, Keturunan), Keponakan1 \== Keponakan2.
+no
